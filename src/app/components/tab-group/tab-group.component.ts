@@ -1,5 +1,5 @@
 import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
-import { TabItemComponent } from 'app/tab-item/tab-item.component';
+import { TabItemComponent } from 'app/components/tab-item/tab-item.component';
 
 @Component({
   selector: 'app-tab-group',

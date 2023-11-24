@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core'
-import { CACHE_TIME_MINUTES } from './app.module';
+import { CACHE_TIME_MINUTES } from '../app.module';
 
 @Injectable()
 export class CacheService {

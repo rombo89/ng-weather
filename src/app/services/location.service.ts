@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { ILocationState, LocationAction } from './location-state.type';
+import { ILocationState, LocationAction } from '../interfaces/location-state.type';
 
 export const LOCATIONS: string = "locations";
 
