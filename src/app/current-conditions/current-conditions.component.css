@@ -1,7 +1,27 @@
 .close {
   cursor: pointer;
 }
+
 .flex {
   display: flex;
   justify-content: space-between;
+}
+
+.current-condition-card {
+  display: flex;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  padding: 20px !important;
+}
+
+.current-condition-data {
+  background-color: inherit;
+  float: left;
+  width: 50%;
+}
+
+.current-condition-data .link-forecast {
+  margin-top: 8px;
+  font-size: 16px;
 }

@@ -1,8 +1,7 @@
-import {Component, inject, Signal} from '@angular/core';
-import {WeatherService} from "../weather.service";
-import {LocationService} from "../location.service";
-import {Router} from "@angular/router";
-import {ConditionsAndZip} from '../conditions-and-zip.type';
+import { Component, computed, inject, Signal } from '@angular/core';
+import { WeatherService } from "../weather.service";
+import { LocationService } from "../location.service";
+import { ConditionsAndZip } from '../conditions-and-zip.type';
 
 @Component({
   selector: 'app-current-conditions',
@@ -12,11 +11,17 @@ import {ConditionsAndZip} from '../conditions-and-zip.type';
 export class CurrentConditionsComponent {
 
   private weatherService = inject(WeatherService);
-  private router = inject(Router);
   protected locationService = inject(LocationService);
   protected currentConditionsByZip: Signal<ConditionsAndZip[]> = this.weatherService.getCurrentConditions();
+  protected currentConditionsPresents = computed(() => this.currentConditionsByZip().length > 0);
 
-  showForecast(zipcode : string){
-    this.router.navigate(['/forecast', zipcode])
+  /**
+   * Remove Location by index
+   * @param title 
+   */
+  removeLocation(index: number): void {
+    this.locationService.removeLocation(index);
   }
+
+
 }
