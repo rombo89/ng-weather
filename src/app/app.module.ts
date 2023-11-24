@@ -41,7 +41,7 @@ export const CACHE_TIME_MINUTES = new InjectionToken<number>('cacheTime');
     TabGroupComponent
   ],
   providers: [
-    { provide: CACHE_TIME_MINUTES, useValue: 5 },
+    { provide: CACHE_TIME_MINUTES, useValue: 30 },
     CacheService,
     LocationService,
     WeatherService

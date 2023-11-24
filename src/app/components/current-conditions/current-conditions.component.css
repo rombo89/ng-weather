@@ -7,7 +7,7 @@
   justify-content: space-between;
 }
 
-.current-condition-card {
+.current-conditions-card {
   display: flex;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
@@ -15,13 +15,13 @@
   padding: 20px !important;
 }
 
-.current-condition-data {
+.current-conditions-data {
   background-color: inherit;
   float: left;
   width: 50%;
 }
 
-.current-condition-data .link-forecast {
+.current-conditions-data .link-forecast {
   margin-top: 8px;
   font-size: 16px;
 }

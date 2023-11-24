@@ -36,8 +36,7 @@ export class WeatherService {
             this.addCurrentConditions(l);
           }
       }
-    },
-      { allowSignalWrites: true });
+    }, { allowSignalWrites: true });
   }
 
   private addCurrentConditions(zipcode: string): void {
