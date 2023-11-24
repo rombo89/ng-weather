@@ -7,10 +7,13 @@ import { LocationService } from "../../services/location.service";
 })
 export class ZipcodeEntryComponent {
 
+  model = { zipcode: '' }; // Zipcode model input 
   constructor(private service: LocationService) { }
 
-  addLocation(zipcode: string): void {
-    this.service.addLocation(zipcode);
+  addLocation(): void {
+    if (this.model.zipcode) {
+      this.service.addLocation(this.model.zipcode);
+    }
   }
 
 }

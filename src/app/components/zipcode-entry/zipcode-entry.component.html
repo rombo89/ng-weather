@@ -1,8 +1,14 @@
 <div class="well">
   <h2>Enter a zipcode:</h2>
-  <input type="text" #zipcode placeholder="Zipcode" class="form-control">
-  <br>
-  <button class="btn btn-primary" (click)="addLocation(zipcode.value)">
-    Add location
-  </button>
+  <form (ngSubmit)="addLocation()" #zipForm="ngForm">
+    <div class="form-group">
+      <input type="text" placeholder="Zipcode" [(ngModel)]="model.zipcode" class="form-control" name="zipcode" #zipcode="ngModel" required>
+      <div [hidden]="(zipcode.valid || zipcode.pristine)" class="alert alert-danger">
+        Enter a zipcode to view the weather conditions
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!zipForm.form.valid">
+      Add location
+    </button>
+  </form>
 </div>
