@@ -1,20 +1,6 @@
 <app-tab-group *ngIf = "currentConditionsPresents()" [isClosable] = "true" (onCloseTab) = "removeLocation($event)">
   <app-tab-item *ngFor="let location of currentConditionsByZip()" title="{{location.data.name}} ({{location.zip}})" class="flex">
-    <!--Tab Item content-->
-    <div class = "current-conditions-card">
-      <div class = "current-conditions-data">
-        <h4>Current conditions: {{location.data.weather[0].main}}</h4>
-        <h4>Temperatures today:</h4>
-        <li>Current: {{location.data.main.temp | number:'.0-0'}}</li>
-        <li>Max: {{location.data.main.temp_max | number:'.0-0'}}</li>
-        <li>Min: {{location.data.main.temp_min | number:'.0-0'}}</li>
-        <p class = "link-forecast">
-          <a [routerLink]="['/forecast', location.zip]">Show 5-day forecast for {{location.data.name}} ({{location.zip}})</a>
-        </p>
-      </div>
-      <div class = "current-conditions-data">
-        <img [src]="weatherService.getWeatherIcon(location.data.weather[0].id)">
-      </div>
-    </div>
+      <!--Tab Item content: current conditions data-->
+      <app-current-conditions-data [location] = "location" imgSrc = "{{weatherService.getWeatherIcon(location.data.weather[0].id)}}"></app-current-conditions-data>
   </app-tab-item>
 </app-tab-group>
