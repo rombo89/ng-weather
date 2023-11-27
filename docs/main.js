@@ -1069,7 +1069,7 @@ module.exports = "<div [hidden]=\"!_tabActive\" class=\"tab-item\">\r\n    <ng-c
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<div class=\"well\">\r\n  <h2>Enter the zipcode:</h2>\r\n  <form (ngSubmit)=\"addLocation()\" #zipForm=\"ngForm\">\r\n    <div class=\"form-group\">\r\n      <input type=\"text\" placeholder=\"Zipcode\" [(ngModel)]=\"model.zipcode\" class=\"form-control\" name=\"zipcode\" #zipcode=\"ngModel\" required>\r\n      <div [hidden]=\"(zipcode.valid || zipcode.pristine)\" class=\"alert alert-danger\">\r\n        Enter a zipcode to view the weather conditions\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!zipForm.form.valid\">\r\n      Add location\r\n    </button>\r\n  </form>\r\n</div>";
+module.exports = "<div class=\"well\">\r\n  <h2>Enter a zipcode:</h2>\r\n  <form (ngSubmit)=\"addLocation()\" #zipForm=\"ngForm\">\r\n    <div class=\"form-group\">\r\n      <input type=\"text\" placeholder=\"Zipcode\" [(ngModel)]=\"model.zipcode\" class=\"form-control\" name=\"zipcode\" #zipcode=\"ngModel\" required>\r\n      <div [hidden]=\"(zipcode.valid || zipcode.pristine)\" class=\"alert alert-danger\">\r\n        Enter a zipcode to view the weather conditions\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!zipForm.form.valid\">\r\n      Add location\r\n    </button>\r\n  </form>\r\n</div>";
 
 /***/ })
 
