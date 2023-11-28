@@ -1084,7 +1084,11 @@ var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOUR
 ___CSS_LOADER_EXPORT___.push([module.id, `.tab-close {
     cursor: pointer;
     float: right;
-}`, "",{"version":3,"sources":["webpack://./src/app/components/tab-group/tab-group.component.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,YAAY;AAChB","sourcesContent":[".tab-close {\r\n    cursor: pointer;\r\n    float: right;\r\n}"],"sourceRoot":""}]);
+}
+
+.nav-link {
+    background-color: #f5f5f5;;
+}`, "",{"version":3,"sources":["webpack://./src/app/components/tab-group/tab-group.component.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,yBAAyB;AAC7B","sourcesContent":[".tab-close {\r\n    cursor: pointer;\r\n    float: right;\r\n}\r\n\r\n.nav-link {\r\n    background-color: #f5f5f5;;\r\n}"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___.toString();
 
