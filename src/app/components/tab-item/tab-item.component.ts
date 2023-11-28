@@ -16,7 +16,7 @@ export class TabItemComponent {
   @Input() set isActive(isActive: boolean) {
     setTimeout(() => {
       this._tabActive = isActive;
-    }, 0)
+    }, 0);
   }
 
   get isActive(): boolean {
