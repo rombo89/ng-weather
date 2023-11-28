@@ -12,7 +12,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   AppComponent: () => (/* binding */ AppComponent)
 /* harmony export */ });
 /* harmony import */ var _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component.html?ngResource */ 3383);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1699);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 1699);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ 6101);
+/* harmony import */ var _components_cache_time_entry_cache_time_entry_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/cache-time-entry/cache-time-entry.component */ 7298);
 var _class;
 var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
   var c = arguments.length,
@@ -23,10 +25,19 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 };
 
 
+
+
 let AppComponent = (_class = class AppComponent {
-  constructor() {}
-}, _class.ctorParameters = () => [], _class);
-AppComponent = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Component)({
+  constructor(modalService) {
+    this.modalService = modalService;
+  }
+  openCacheTimeModal() {
+    this.modalService.open(_components_cache_time_entry_cache_time_entry_component__WEBPACK_IMPORTED_MODULE_1__.CacheTimeEntryComponent);
+  }
+}, _class.ctorParameters = () => [{
+  type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__.NgbModal
+}], _class);
+AppComponent = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
   selector: 'app-root',
   template: _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__
 })], AppComponent);
@@ -46,9 +57,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   AppModule: () => (/* binding */ AppModule),
 /* harmony export */   CACHE_TIME_MINUTES: () => (/* binding */ CACHE_TIME_MINUTES)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/platform-browser */ 6480);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ 1699);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 8849);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/platform-browser */ 6480);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 1699);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ 8849);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 6401);
 /* harmony import */ var _components_zipcode_entry_zipcode_entry_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/zipcode-entry/zipcode-entry.component */ 3813);
 /* harmony import */ var _services_location_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/location.service */ 5434);
@@ -56,16 +67,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_weather_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/weather.service */ 1125);
 /* harmony import */ var _components_current_conditions_current_conditions_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/current-conditions/current-conditions.component */ 6263);
 /* harmony import */ var _components_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/main-page/main-page.component */ 4766);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ 7947);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ 7947);
 /* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.routing */ 34);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ 4860);
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/service-worker */ 1509);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ 4860);
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/service-worker */ 1509);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../environments/environment */ 553);
 /* harmony import */ var _components_tab_item_tab_item_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/tab-item/tab-item.component */ 1083);
 /* harmony import */ var _components_tab_group_tab_group_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/tab-group/tab-group.component */ 7536);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common */ 6575);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 6575);
 /* harmony import */ var _services_cache_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/cache.service */ 248);
 /* harmony import */ var _components_current_conditions_data_current_conditions_data_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/current-conditions-data/current-conditions-data.component */ 7196);
+/* harmony import */ var _components_cache_time_entry_cache_time_entry_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/cache-time-entry/cache-time-entry.component */ 7298);
 var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
   var c = arguments.length,
     r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
@@ -93,16 +105,17 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 
 
 
-const CACHE_TIME_MINUTES = new _angular_core__WEBPACK_IMPORTED_MODULE_13__.InjectionToken('cacheTime');
+
+const CACHE_TIME_MINUTES = new _angular_core__WEBPACK_IMPORTED_MODULE_14__.InjectionToken('cacheTime');
 let AppModule = class AppModule {};
-AppModule = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_13__.NgModule)({
-  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_14__.CommonModule, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_15__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HttpClientModule, _angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterModule, _app_routing__WEBPACK_IMPORTED_MODULE_7__.routing, _angular_service_worker__WEBPACK_IMPORTED_MODULE_19__.ServiceWorkerModule.register('/ngsw-worker.js', {
+AppModule = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_14__.NgModule)({
+  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_15__.CommonModule, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_17__.FormsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HttpClientModule, _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouterModule, _app_routing__WEBPACK_IMPORTED_MODULE_7__.routing, _angular_service_worker__WEBPACK_IMPORTED_MODULE_20__.ServiceWorkerModule.register('/ngsw-worker.js', {
     enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_8__.environment.production
   })],
-  declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent, _components_zipcode_entry_zipcode_entry_component__WEBPACK_IMPORTED_MODULE_1__.ZipcodeEntryComponent, _components_forecasts_list_forecasts_list_component__WEBPACK_IMPORTED_MODULE_3__.ForecastsListComponent, _components_current_conditions_current_conditions_component__WEBPACK_IMPORTED_MODULE_5__.CurrentConditionsComponent, _components_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_6__.MainPageComponent, _components_tab_item_tab_item_component__WEBPACK_IMPORTED_MODULE_9__.TabItemComponent, _components_tab_group_tab_group_component__WEBPACK_IMPORTED_MODULE_10__.TabGroupComponent, _components_current_conditions_data_current_conditions_data_component__WEBPACK_IMPORTED_MODULE_12__.CurrentConditionsDataComponent],
+  declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent, _components_zipcode_entry_zipcode_entry_component__WEBPACK_IMPORTED_MODULE_1__.ZipcodeEntryComponent, _components_forecasts_list_forecasts_list_component__WEBPACK_IMPORTED_MODULE_3__.ForecastsListComponent, _components_current_conditions_current_conditions_component__WEBPACK_IMPORTED_MODULE_5__.CurrentConditionsComponent, _components_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_6__.MainPageComponent, _components_tab_item_tab_item_component__WEBPACK_IMPORTED_MODULE_9__.TabItemComponent, _components_tab_group_tab_group_component__WEBPACK_IMPORTED_MODULE_10__.TabGroupComponent, _components_current_conditions_data_current_conditions_data_component__WEBPACK_IMPORTED_MODULE_12__.CurrentConditionsDataComponent, _components_cache_time_entry_cache_time_entry_component__WEBPACK_IMPORTED_MODULE_13__.CacheTimeEntryComponent],
   providers: [{
     provide: CACHE_TIME_MINUTES,
-    useValue: 30
+    useValue: 120
   }, _services_cache_service__WEBPACK_IMPORTED_MODULE_11__.CacheService, _services_location_service__WEBPACK_IMPORTED_MODULE_2__.LocationService, _services_weather_service__WEBPACK_IMPORTED_MODULE_4__.WeatherService],
   bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent]
 })], AppModule);
@@ -135,6 +148,80 @@ const appRoutes = [{
   component: _components_forecasts_list_forecasts_list_component__WEBPACK_IMPORTED_MODULE_0__.ForecastsListComponent
 }];
 const routing = _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forRoot(appRoutes, {});
+
+/***/ }),
+
+/***/ 7298:
+/*!***************************************************************************!*\
+  !*** ./src/app/components/cache-time-entry/cache-time-entry.component.ts ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CacheTimeEntryComponent: () => (/* binding */ CacheTimeEntryComponent)
+/* harmony export */ });
+/* harmony import */ var _cache_time_entry_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cache-time-entry.component.html?ngResource */ 262);
+/* harmony import */ var _cache_time_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cache-time-entry.component.css?ngResource */ 5381);
+/* harmony import */ var _cache_time_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_cache_time_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 1699);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ 6101);
+/* harmony import */ var app_services_cache_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/services/cache.service */ 248);
+var _class;
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+let CacheTimeEntryComponent = (_class = class CacheTimeEntryComponent {
+  constructor(cacheService, activeModal) {
+    this.cacheService = cacheService;
+    this.activeModal = activeModal;
+  }
+  ngOnInit() {
+    // Get the cache default value
+    this.model = {
+      cacheTime: this.cacheService.getCacheTime()
+    };
+  }
+  /**
+   * Save function:
+   * - Edit the cache time;
+   * - Clear the local storage, remove the application data cached;
+   * - Close the modal;
+   */
+  save() {
+    if (this.model?.cacheTime) {
+      this.cacheService.setCacheTime(this.model.cacheTime);
+      this.cacheService.cleanLocalStorage();
+      this.close();
+    }
+  }
+  /**
+   * Close the modal
+   */
+  close() {
+    this.activeModal.close();
+  }
+}, _class.ctorParameters = () => [{
+  type: app_services_cache_service__WEBPACK_IMPORTED_MODULE_2__.CacheService
+}, {
+  type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__.NgbActiveModal
+}], _class);
+CacheTimeEntryComponent = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+  selector: 'app-cache-time-entry',
+  template: _cache_time_entry_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+  styles: [(_cache_time_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1___default())]
+})], CacheTimeEntryComponent);
+
 
 /***/ }),
 
@@ -479,8 +566,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   ZipcodeEntryComponent: () => (/* binding */ ZipcodeEntryComponent)
 /* harmony export */ });
 /* harmony import */ var _zipcode_entry_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./zipcode-entry.component.html?ngResource */ 2647);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1699);
-/* harmony import */ var _services_location_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/location.service */ 5434);
+/* harmony import */ var _zipcode_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./zipcode-entry.component.css?ngResource */ 956);
+/* harmony import */ var _zipcode_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_zipcode_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 1699);
+/* harmony import */ var _services_location_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/location.service */ 5434);
 var _class;
 var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
   var c = arguments.length,
@@ -489,6 +578,7 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
   if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -506,11 +596,12 @@ let ZipcodeEntryComponent = (_class = class ZipcodeEntryComponent {
     }
   }
 }, _class.ctorParameters = () => [{
-  type: _services_location_service__WEBPACK_IMPORTED_MODULE_1__.LocationService
+  type: _services_location_service__WEBPACK_IMPORTED_MODULE_2__.LocationService
 }], _class);
-ZipcodeEntryComponent = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({
+ZipcodeEntryComponent = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
   selector: 'app-zipcode-entry',
-  template: _zipcode_entry_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__
+  template: _zipcode_entry_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+  styles: [(_zipcode_entry_component_css_ngResource__WEBPACK_IMPORTED_MODULE_1___default())]
 })], ZipcodeEntryComponent);
 
 
@@ -594,6 +685,12 @@ let CacheService = (_class = class CacheService {
       hasExpiration: expirationMS !== 0 ? true : false
     };
     localStorage.setItem(opts.key, JSON.stringify(record));
+  }
+  getCacheTime() {
+    return this.cacheMinutes;
+  }
+  setCacheTime(cacheTime) {
+    this.cacheMinutes = cacheTime;
   }
   /**
    * Remove a record from local storage
@@ -770,6 +867,10 @@ let WeatherService = WeatherService_1 = (_class = class WeatherService {
       }
     }
   }
+  /**
+   * Remove a condition by index
+   * @param index
+   */
   removeCurrentConditions(index) {
     this.currentConditions.mutate(conditions => {
       conditions.splice(index, 1);
@@ -851,6 +952,26 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.productio
   (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.enableProdMode)();
 }
 (0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__.platformBrowserDynamic)().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule);
+
+/***/ }),
+
+/***/ 5381:
+/*!***************************************************************************************!*\
+  !*** ./src/app/components/cache-time-entry/cache-time-entry.component.css?ngResource ***!
+  \***************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// Imports
+var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ 2487);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ 1386);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `::ng-deep ngb-modal-backdrop {
+    z-index: 1050 !important;
+  }`, "",{"version":3,"sources":["webpack://./src/app/components/cache-time-entry/cache-time-entry.component.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;EAC1B","sourcesContent":["::ng-deep ngb-modal-backdrop {\r\n    z-index: 1050 !important;\r\n  }"],"sourceRoot":""}]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___.toString();
+
 
 /***/ }),
 
@@ -985,6 +1106,27 @@ module.exports = ___CSS_LOADER_EXPORT___.toString();
 
 /***/ }),
 
+/***/ 956:
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/zipcode-entry/zipcode-entry.component.css?ngResource ***!
+  \*********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// Imports
+var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ 2487);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ 1386);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.zipcode-card {
+    background-color: #f5f5f5;
+    margin-bottom: 20px !important;
+}`, "",{"version":3,"sources":["webpack://./src/app/components/zipcode-entry/zipcode-entry.component.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;IACzB,8BAA8B;AAClC","sourcesContent":[".zipcode-card {\r\n    background-color: #f5f5f5;\r\n    margin-bottom: 20px !important;\r\n}"],"sourceRoot":""}]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___.toString();
+
+
+/***/ }),
+
 /***/ 3383:
 /*!***********************************************!*\
   !*** ./src/app/app.component.html?ngResource ***!
@@ -992,7 +1134,18 @@ module.exports = ___CSS_LOADER_EXPORT___.toString();
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<router-outlet></router-outlet>\r\n";
+module.exports = "<div class=\"navbar navbar-dark bg-dark\" style=\"margin-bottom: 20px;\">\r\n    <span class=\"navbar-brand h1\" href=\"/\">Weather App</span>\r\n    <div class=\"form-inline\">\r\n        <button class=\"btn btn-primary\" type=\"button\" (click)=\"openCacheTimeModal()\">Edit the cache time</button>\r\n    </div>\r\n</div>\r\n<router-outlet></router-outlet>";
+
+/***/ }),
+
+/***/ 262:
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/cache-time-entry/cache-time-entry.component.html?ngResource ***!
+  \****************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = "<form (ngSubmit)=\"save()\" #cacheForm=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n        <h4 class=\"modal-title\">Edit the cache time (minutes)</h4>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n        <div class=\"alert alert-warning mb-2\">\r\n            Changing the cache time, your weather data already cached will be deleted.\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <input type=\"text\" placeholder=\"Cache time (minutes)\" [(ngModel)]=\"model.cacheTime\" class=\"form-control\"\r\n                name=\"cacheTime\" #cacheTime=\"ngModel\" required>\r\n            <div [hidden]=\"(cacheTime.valid || cacheTime.pristine)\" class=\"alert alert-danger mt-2\">\r\n                Enter the cache time\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!cacheForm.form.valid\">\r\n            Save\r\n        </button>\r\n        <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"close()\">Close</button>\r\n    </div>\r\n</form>";
 
 /***/ }),
 
@@ -1025,7 +1178,7 @@ module.exports = "<app-tab-group *ngIf = \"currentConditionsPresents()\" [isClos
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<div class=\"panel panel-default\">\r\n  <div class=\"panel-heading\">\r\n    <h3 class=\"panel-title\">5-day forecast for {{forecast?.city.name}}</h3>\r\n  </div>\r\n  <ul class=\"list-group\">\r\n    <li *ngFor=\"let dailyForecast of forecast?.list\" class=\"list-group-item\">\r\n      {{ (dailyForecast.dt * 1000) | date:'EEEE, MMM d'}}:\r\n      {{dailyForecast.weather[0].main}}\r\n      - Min: {{dailyForecast.temp.min | number:'.0-0'}}\r\n      - Max: {{dailyForecast.temp.max | number:'.0-0'}}\r\n\r\n      <img [src]=\"weatherService.getWeatherIcon(dailyForecast.weather[0].id)\" class=\"icon\">\r\n    </li>\r\n  </ul>\r\n</div>\r\n<button class=\"btn btn-success\" [routerLink]=\"'/'\" >< Back to main page</button>\r\n";
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\">\r\n      <h3 class=\"card-title\">5-day forecast for {{forecast?.city.name}}</h3>\r\n    </div>\r\n    <ul class=\"list-group\">\r\n      <li *ngFor=\"let dailyForecast of forecast?.list\" class=\"list-group-item\">\r\n        {{ (dailyForecast.dt * 1000) | date:'EEEE, MMM d'}}:\r\n        {{dailyForecast.weather[0].main}}\r\n        - Min: {{dailyForecast.temp.min | number:'.0-0'}}\r\n        - Max: {{dailyForecast.temp.max | number:'.0-0'}}\r\n  \r\n        <img [src]=\"weatherService.getWeatherIcon(dailyForecast.weather[0].id)\" class=\"icon\">\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <br>\r\n  <button class=\"btn btn-primary\" [routerLink]=\"'/'\" >< Back to main page</button>\r\n</div>\r\n\r\n";
 
 /***/ }),
 
@@ -1047,7 +1200,7 @@ module.exports = "<div class=\"container-fluid\">\r\n\r\n  <app-zipcode-entry> <
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ul class=\"nav nav-pills nav-justified\"> <!--Tabs Header-->\r\n    <li *ngFor=\"let item of items; let i = index\" [class.active]=\"item.isActive\">\r\n        <a (click)=\"activateTabItem(item)\" style=\"cursor: pointer;\">{{item.title}}\r\n            <span *ngIf=\"isClosable\" class=\"tab-close\" (click)=\"closeTab(i)\">&times;</span>\r\n        </a>\r\n    </li>\r\n</ul>\r\n<ng-content></ng-content> <!--Content projection for TabItemComponent list-->";
+module.exports = "<ul class=\"nav nav-pills nav-justified\"> <!--Tabs Header-->\r\n    <li *ngFor=\"let item of items; let i = index\" class = \"nav-link\" [class.active]=\"item.isActive\" (click)=\"activateTabItem(item)\" style=\"cursor: pointer;\">\r\n        <a>{{item.title}}\r\n            <span *ngIf=\"isClosable\" class=\"tab-close\" (click)=\"closeTab(i)\">&times;</span>\r\n        </a>\r\n    </li>\r\n</ul>\r\n<ng-content></ng-content> <!--Content projection for TabItemComponent list-->";
 
 /***/ }),
 
@@ -1069,7 +1222,7 @@ module.exports = "<div [hidden]=\"!_tabActive\" class=\"tab-item\">\r\n    <ng-c
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<div class=\"well\">\r\n  <h2>Enter a zipcode:</h2>\r\n  <form (ngSubmit)=\"addLocation()\" #zipForm=\"ngForm\">\r\n    <div class=\"form-group\">\r\n      <input type=\"text\" placeholder=\"Zipcode\" [(ngModel)]=\"model.zipcode\" class=\"form-control\" name=\"zipcode\" #zipcode=\"ngModel\" required>\r\n      <div [hidden]=\"(zipcode.valid || zipcode.pristine)\" class=\"alert alert-danger\">\r\n        Enter a zipcode to view the weather conditions\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!zipForm.form.valid\">\r\n      Add location\r\n    </button>\r\n  </form>\r\n</div>";
+module.exports = "<div class=\"card card-body zipcode-card\">\r\n  <h2>Enter a zipcode:</h2>\r\n  <form (ngSubmit)=\"addLocation()\" #zipForm=\"ngForm\">\r\n    <div class=\"form-group\">\r\n      <input type=\"text\" placeholder=\"Zipcode\" [(ngModel)]=\"model.zipcode\" class=\"form-control\" name=\"zipcode\" #zipcode=\"ngModel\" required>\r\n      <div [hidden]=\"(zipcode.valid || zipcode.pristine)\" class=\"alert alert-danger mt-2\">\r\n        Enter a zipcode to view the weather conditions\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!zipForm.form.valid\">\r\n      Add location\r\n    </button>\r\n  </form>\r\n</div>";
 
 /***/ })
 

@@ -4111,7 +4111,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 101:
+/***/ 4615:
 /*!********************************************************!*\
   !*** ./node_modules/core-js/modules/_object-assign.js ***!
   \********************************************************/
@@ -5229,7 +5229,7 @@ var global = __webpack_require__(/*! ./_global */ 6864);
 var each = __webpack_require__(/*! ./_array-methods */ 1834)(0);
 var redefine = __webpack_require__(/*! ./_redefine */ 470);
 var meta = __webpack_require__(/*! ./_meta */ 5410);
-var assign = __webpack_require__(/*! ./_object-assign */ 101);
+var assign = __webpack_require__(/*! ./_object-assign */ 4615);
 var weak = __webpack_require__(/*! ./_collection-weak */ 7726);
 var isObject = __webpack_require__(/*! ./_is-object */ 770);
 var validate = __webpack_require__(/*! ./_validate-collection */ 6083);
