@@ -13,7 +13,7 @@ export class CacheTimeEntryComponent implements OnInit {
   constructor(private cacheService: CacheService, private activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
-    // Get the cache default value
+    // Get the cache value
     this.model = { cacheTime: this.cacheService.getCacheTime() };
   }
 
