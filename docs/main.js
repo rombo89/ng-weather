@@ -187,7 +187,7 @@ let CacheTimeEntryComponent = (_class = class CacheTimeEntryComponent {
     this.activeModal = activeModal;
   }
   ngOnInit() {
-    // Get the cache default value
+    // Get the cache value
     this.model = {
       cacheTime: this.cacheService.getCacheTime()
     };
@@ -652,8 +652,8 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 
 
 let CacheService = (_class = class CacheService {
-  constructor(cacheMinutes) {
-    this.cacheMinutes = cacheMinutes;
+  constructor(cacheTime) {
+    this.cacheTime = cacheTime;
   }
   /**
    * Get cached data from local storage
@@ -674,23 +674,31 @@ let CacheService = (_class = class CacheService {
   /**
    * Save on the local storage the data
    * - Set the expiration time if presents
-   * @param opts
+   * @param opts cache data
    */
   put(opts) {
-    const expirationMins = opts.expirationMins ?? this.cacheMinutes;
+    const expirationMins = opts.expirationMins ?? this.cacheTime; // Cache time (minutes)
     const expirationMS = expirationMins !== 0 ? expirationMins * 60 * 1000 : 0; // Convert in miliseconds 
     const record = {
-      value: typeof opts.data === 'string' ? opts.data : JSON.stringify(opts.data),
       expiration: expirationMS !== 0 ? new Date().getTime() + expirationMS : null,
-      hasExpiration: expirationMS !== 0 ? true : false
+      hasExpiration: expirationMS !== 0 ? true : false,
+      value: typeof opts.data === 'string' ? opts.data : JSON.stringify(opts.data)
     };
     localStorage.setItem(opts.key, JSON.stringify(record));
   }
+  /**
+   * GET the cache time
+   * @returns the cache time value
+   */
   getCacheTime() {
-    return this.cacheMinutes;
+    return this.cacheTime;
   }
+  /**
+   * Set the cache time (by cache-time-entry component)
+   * @param cacheTime
+   */
   setCacheTime(cacheTime) {
-    this.cacheMinutes = cacheTime;
+    this.cacheTime = cacheTime;
   }
   /**
    * Remove a record from local storage
