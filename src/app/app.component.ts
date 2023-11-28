@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CacheTimeEntryComponent } from './components/cache-time-entry/cache-time-entry.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
+
+  openCacheTimeModal(): void {
+    this.modalService.open(CacheTimeEntryComponent);
+  }
 }

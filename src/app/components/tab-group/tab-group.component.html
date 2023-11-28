@@ -1,6 +1,6 @@
 <ul class="nav nav-pills nav-justified"> <!--Tabs Header-->
-    <li *ngFor="let item of items; let i = index" [class.active]="item.isActive">
-        <a (click)="activateTabItem(item)" style="cursor: pointer;">{{item.title}}
+    <li *ngFor="let item of items; let i = index" class = "nav-link" [class.active]="item.isActive" (click)="activateTabItem(item)" style="cursor: pointer;">
+        <a>{{item.title}}
             <span *ngIf="isClosable" class="tab-close" (click)="closeTab(i)">&times;</span>
         </a>
     </li>

@@ -1,0 +1,23 @@
+<form (ngSubmit)="save()" #cacheForm="ngForm">
+    <div class="modal-header">
+        <h4 class="modal-title">Edit the cache time (minutes)</h4>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-warning mb-2">
+            Changing the cache time, your weather data already cached will be deleted.
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Cache time (minutes)" [(ngModel)]="model.cacheTime" class="form-control"
+                name="cacheTime" #cacheTime="ngModel" required>
+            <div [hidden]="(cacheTime.valid || cacheTime.pristine)" class="alert alert-danger mt-2">
+                Enter the cache time
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="!cacheForm.form.valid">
+            Save
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="close()">Close</button>
+    </div>
+</form>

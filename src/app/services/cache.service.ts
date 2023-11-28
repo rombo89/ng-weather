@@ -39,19 +39,27 @@ export class CacheService {
         localStorage.setItem(opts.key, JSON.stringify(record));
     }
 
+    getCacheTime(): number{
+        return this.cacheMinutes;
+    }
+
+    setCacheTime(cacheTime: number): void {
+        this.cacheMinutes = cacheTime;
+    }
+
     /**
      * Remove a record from local storage
      * @param key 
      */
     remove(key: string) {
-        localStorage.removeItem(key)
+        localStorage.removeItem(key);
     }
 
     /**
      * Clean local storage
      */
     cleanLocalStorage() {
-        localStorage.clear()
+        localStorage.clear();
     }
 }
 

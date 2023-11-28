@@ -19,6 +19,7 @@ import { TabGroupComponent } from './components/tab-group/tab-group.component';
 import { CommonModule } from '@angular/common';
 import { CacheService } from './services/cache.service';
 import { CurrentConditionsDataComponent } from './components/current-conditions-data/current-conditions-data.component';
+import { CacheTimeEntryComponent } from './components/cache-time-entry/cache-time-entry.component';
 
 export const CACHE_TIME_MINUTES = new InjectionToken<number>('cacheTime');
 
@@ -40,7 +41,8 @@ export const CACHE_TIME_MINUTES = new InjectionToken<number>('cacheTime');
     MainPageComponent,
     TabItemComponent,
     TabGroupComponent,
-    CurrentConditionsDataComponent
+    CurrentConditionsDataComponent,
+    CacheTimeEntryComponent
   ],
   providers: [
     { provide: CACHE_TIME_MINUTES, useValue: 120 }, // 2 Hours, default value

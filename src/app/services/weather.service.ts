@@ -61,10 +61,13 @@ export class WeatherService {
           )
           .subscribe(data => this.currentConditions.mutate(conditions => conditions.push({ zip: zipcode, data })));
       }
-
     }
   }
 
+  /**
+   * Remove a condition by index
+   * @param index 
+   */
   private removeCurrentConditions(index: number): void {
     this.currentConditions.mutate(conditions => {
       conditions.splice(index, 1);

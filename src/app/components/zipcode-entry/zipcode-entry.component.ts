@@ -3,7 +3,8 @@ import { LocationService } from "../../services/location.service";
 
 @Component({
   selector: 'app-zipcode-entry',
-  templateUrl: './zipcode-entry.component.html'
+  templateUrl: './zipcode-entry.component.html',
+  styleUrls: ['./zipcode-entry.component.css']
 })
 export class ZipcodeEntryComponent {
 

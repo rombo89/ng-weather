@@ -1,9 +1,9 @@
-<div class="well">
+<div class="card card-body zipcode-card">
   <h2>Enter a zipcode:</h2>
   <form (ngSubmit)="addLocation()" #zipForm="ngForm">
     <div class="form-group">
       <input type="text" placeholder="Zipcode" [(ngModel)]="model.zipcode" class="form-control" name="zipcode" #zipcode="ngModel" required>
-      <div [hidden]="(zipcode.valid || zipcode.pristine)" class="alert alert-danger">
+      <div [hidden]="(zipcode.valid || zipcode.pristine)" class="alert alert-danger mt-2">
         Enter a zipcode to view the weather conditions
       </div>
     </div>
