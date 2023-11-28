@@ -43,7 +43,7 @@ export const CACHE_TIME_MINUTES = new InjectionToken<number>('cacheTime');
     CurrentConditionsDataComponent
   ],
   providers: [
-    { provide: CACHE_TIME_MINUTES, useValue: 30 },
+    { provide: CACHE_TIME_MINUTES, useValue: 120 }, // 2 Hours, default value
     CacheService,
     LocationService,
     WeatherService
