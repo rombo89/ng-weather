@@ -1,10 +1,11 @@
 import { Inject, Injectable } from '@angular/core'
 import { CACHE_TIME_MINUTES } from '../app.module';
+import { ILocalStorageCache } from 'app/interfaces/local-storage-cache.type';
 
 @Injectable()
 export class CacheService {
 
-    constructor(@Inject(CACHE_TIME_MINUTES) private cacheMinutes: number) { }
+    constructor(@Inject(CACHE_TIME_MINUTES) private cacheTime: number) { }
 
     /**
      * Get cached data from local storage
@@ -26,25 +27,33 @@ export class CacheService {
     /**
      * Save on the local storage the data
      * - Set the expiration time if presents
-     * @param opts 
+     * @param opts cache data
      */
     put(opts: ILocalStorageCache): void {
-        const expirationMins = opts.expirationMins ?? this.cacheMinutes;
+        const expirationMins = opts.expirationMins ?? this.cacheTime; // Cache time (minutes)
         const expirationMS = expirationMins !== 0 ? (expirationMins * 60 * 1000) : 0; // Convert in miliseconds 
         const record = {
-            value: typeof opts.data === 'string' ? opts.data : JSON.stringify(opts.data),
             expiration: expirationMS !== 0 ? new Date().getTime() + expirationMS : null,
-            hasExpiration: expirationMS !== 0 ? true : false
+            hasExpiration: expirationMS !== 0 ? true : false,
+            value: typeof opts.data === 'string' ? opts.data : JSON.stringify(opts.data),
         }
         localStorage.setItem(opts.key, JSON.stringify(record));
     }
 
+    /**
+     * GET the cache time
+     * @returns the cache time value
+     */
     getCacheTime(): number{
-        return this.cacheMinutes;
+        return this.cacheTime;
     }
 
+    /**
+     * Set the cache time (by cache-time-entry component)
+     * @param cacheTime 
+     */
     setCacheTime(cacheTime: number): void {
-        this.cacheMinutes = cacheTime;
+        this.cacheTime = cacheTime;
     }
 
     /**
@@ -63,11 +72,3 @@ export class CacheService {
     }
 }
 
-/**
- * Local storage cache model
- */
-export interface ILocalStorageCache {
-    key: string;
-    data: any;
-    expirationMins?: number; // Minutes
-}
